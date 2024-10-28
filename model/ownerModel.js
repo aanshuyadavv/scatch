@@ -6,15 +6,12 @@ const ownerSchema = new Schema({
     type: String,
     minLength: 3,
     trim: true,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
   },
   password: {
     type: String,
-    required: true,
   },
 
   profilepic: {
@@ -27,7 +24,6 @@ const ownerSchema = new Schema({
   },
   gstin: {
     type: String,
-    required: true,
   },
 });
 

@@ -1,8 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('user home page')
-})
+const {
+  registerUserController, loginUserController, logoutUserController
+} = require("../controller/authController");
 
-module.exports = router
+const {isLoggedIn} = require("../middleware/isLoggedIn")
+
+router.post("/register", registerUserController);
+  router.post("/login", loginUserController);
+router.post("/logout", isLoggedIn, logoutUserController);
+
+module.exports = router;

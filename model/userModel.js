@@ -16,27 +16,17 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-
-  isAdmin: {
-    type: Boolean,
-    required: true,
-  },
-
   profilepic: {
     type: String,
     default: "anshu.jpg",
   },
-  cart: {
-    type: Array,
-    default: [],
-  },
+  cart: [{ type: Schema.Types.ObjectId, ref: 'ProductModel' }],
   orders: {
     type: Array,
     default: [],
   },
   contact: {
     type: Number,
-    required: true,
   },
 });
 

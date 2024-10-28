@@ -7,8 +7,7 @@ const productSchema = new Schema({
     required: true,
   },
   image: {
-    type: String,
-    required: true,
+    type: Buffer,
   },
   price: {
     type: Number,
@@ -19,7 +18,7 @@ const productSchema = new Schema({
     type: Number,
     default: 0,
   },
-  bgcolor: {
+  brand: {
     type: String,
     required: true,
   },
